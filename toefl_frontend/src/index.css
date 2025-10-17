@@ -1,0 +1,21 @@
+/* src/index.css */
+
+/* 1. 引入 Tailwind CSS 核心指令 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. 添加移动端安全区域支持（用于 pt-safe, pb-safe） */
+:root {
+  /* 定义 CSS 变量来捕获安全区域的插值 */
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+}
+
+/* 3. 定义我们自定义的安全区域工具类 */
+.pt-safe {
+  padding-top: var(--safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: var(--safe-area-inset-bottom);
+}
